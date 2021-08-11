@@ -15,5 +15,8 @@ public class StudentService {
         Student student = studentRepository.findById(id).orElse(null);
         return student;
     }
-
+     public void addStudent(Student student){
+         studentRepository.save(student);
+     }
+     
 }

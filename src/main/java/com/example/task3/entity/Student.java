@@ -13,9 +13,9 @@ public class Student implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
-    private long id;
+    private Integer id;
     @Column(name = "Grade")
-    private long grade_num;
+    private Integer grade_num;
     @Column(name = "firstname")
     private String firstName;
     @Column(name = "lastname")
