@@ -4,15 +4,15 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
-@Data
+
 @Entity
-@Table(name = "student")
+@Table(name = "Student")
+@Data
 public class Student implements Serializable {
 
     private static final long serialVersionUID = -2343243243242432341L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ID")
     private Integer id;
     @Column(name = "Grade")
     private Integer grade_num;
@@ -20,9 +20,8 @@ public class Student implements Serializable {
     private String firstName;
     @Column(name = "lastname")
     private String lastName;
-    @Column(name = "Academic Email")
+    @Column(name = "AcademicEmail")
     private String email;
-//Setters, getters and constructors
 
 
 }

@@ -5,10 +5,10 @@ import com.example.task3.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 @CrossOrigin
-@RequestMapping("/api/students")
 @RestController
 public class StudentController {
 
@@ -20,15 +20,18 @@ public class StudentController {
         return studentService.getStudent(id);
     }
 
-    @GetMapping("/addStudent")
+    @PostMapping("/addStudent")
     public void addStudent(@RequestBody Map<String,Object> map) {
         Student student=new Student();
-        student.setId(Integer.parseInt(map.get("id").toString()));
         student.setGrade_num(Integer.parseInt(map.get("grade").toString()));
         student.setFirstName(map.get("first").toString());
         student.setLastName(map.get("last").toString());
         student.setEmail(map.get("email").toString());
         studentService.addStudent(student);
 
+    }
+    @GetMapping("/getStudents")
+    public List<Student> getStudents() {
+        return studentService.getStudents();
     }
 }
